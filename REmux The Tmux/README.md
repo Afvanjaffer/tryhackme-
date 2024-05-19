@@ -141,6 +141,9 @@ prefix and command. This will run on the first tmux session. The session running
 `tmux a -t thm`
 
 7. How to create a new tmux session from your current tmux session with the name kali?
+
+`tmux new -s kali -d`
+
 8. How to switch between two or more tmux sessions without detaching from the current tmux session?
 
 `ctrl b s`
@@ -150,7 +153,13 @@ prefix and command. This will run on the first tmux session. The session running
 `tmux kill-session -t thm`
 
 10. Within a nested tmux session. A second tmux session within the first one. How to change the session name of the second/internal tmux session?
+
+`ctrl b ctrl b shift :` 
+
 11. How to get into a tmux prompt to run/type tmux commands?
+
+`ctrl b shift:`
+
 12. Are there than one way to exit a tmux prompt? yea/nay
 
 `yea`
@@ -160,8 +169,12 @@ prefix and command. This will run on the first tmux session. The session running
 `yea`
 
 14. Within tmux prompt or command mode how would you change the tmux directory? Where a new window or pane will start from the changed directory of /opt.
+
+`a -c /opt`
+
 15. How to kill all tmux sessions accept the one currently in use? With the name "notes".
 
+`tmux kill-session -t notes? -a`
 ## Task 3 Manage tmux "Panes"
 
 Within the current tmux session window. Tmux panes are used to divide the current session into multiple sized terminals. That allows multiple commands to run within the same session window.
@@ -279,12 +292,21 @@ Started with the parrot in the bottom right pane. After the command. Have swappe
 `ctrl b shift "`
 
 2. How to close a tmux pane like closing a ssh session?
+
+`exit`
+
 3. How to create a new pane split vertically?
 
 `ctrl b shift %`
 
 4. How to cycle between tmux pre built layout options? Starting with the number 1.
+
+`ctrl b esc 1`
+
 5. How to cycle/toggle between tmux layouts, one at a time?
+
+`ctrl b spacebar`
+
 6. How to force quit a frozen, crashed or borked pane?
 
 `ctrl b x y`
@@ -306,9 +328,16 @@ Started with the parrot in the bottom right pane. After the command. Have swappe
 `ctrl b shift }`
 
 11. Before using swap-pane. How to check for which pane has what number?
+
+`ctrl b n`
+
 12. How to swap two panes and move with the swapped pane?  Within tmux prompt mode. 1 -> 3 location
+
+``
+
 13. How to swap two panes without changing the currently selected pane location? Within tmux prompt mode. 1 -> 4 pane number
 
+`:swap-pane -s 1 -t  3`
 ## Task 4 Manage tmux "Windows"
 
 Tmux windows are like a new terminal tab that you can easy swap from and more. To create a new empty tmux window to work on. Do prefix c. Shown with the new window number and name. Note the currently selected window will be marked with a * or wildcard star. At the end of the current window name.
@@ -424,9 +453,16 @@ For the join-pane commands adding -v on the end fuses the two panes together hor
 `ctrl b shift &`
 
 10. How to view and cycle between all the tmux windows for the current tmux session without detaching from the current session?
+
+`ctrl b w`
+
 11. How to move back to the previous tmux window?
+
+`ctrl b p`
+
 12. How to move up to the next tmux window?
 
+`ctrl b u`
 ## Task 5 Tmux "copy" mode
 ## Task 6 Oh My Tmux and beyond
 ## Task 7 Oreo's open-source .tmux.conf file 
